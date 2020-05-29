@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+<html lang="zh-hans">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>
+			电动汽车智能充电桩微信小程序的设计与实现
+		</title>
+		<link
+			href="//fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+			rel="stylesheet"
+		/>
+		<link href="style.css" rel="stylesheet" />
+		<link
+			href="node_modules/impress.js/css/impress-common.css"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="favicon.png" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<script
+			type="text/javascript"
+			src="http://cdn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"
+		></script>
+		<script type="text/javascript">
+			$webfont.load(
+				"body",
+				"e7f32cfe5705430892456898a5356eb2",
+				"PT Sans, sans-serif ,SiYuan-Heavy"
+			);
+			$webfont.draw();
+		</script>
+	</head>
+
+	<body class="impress-not-supported">
+		<div
+			id="impress"
+			data-transition-duration="700"
+			data-width="1920"
+			data-height="1080"
+			data-min-scale="0"
+			data-perspective="1000"
+		>
+			<div
+				id="bored"
+				class="step slide text"
+				data-x="-4000"
+				data-y="-1500"
+			>
+				<p>
+					电动汽车智能充电桩<br />
+					微信小程序的<br />
+					<b>设计</b>与<b>实现</b>
+				</p>
+				<div class="author">
+					<span>制作人：张克凌</span>
+					<span>指导老师：梁建平</span>
+				</div>
+			</div>
+
+			<div
+				id="back-1"
+				class="step slide text back"
+				data-x="-2000"
+				data-y="-1500"
+			>
+				<div>
+					<h3><b>设计背景</b></h3>
+					<p>
+						在<b>新能源车</b>飞速发展和国家<b>“新基建”</b><br />
+						计划深入推行的大环境下，<br />
+						不断流入市场的<b>新能源车</b>就需要<b>大量</b>的基础设施，<br />
+						也就是充电桩来保障车辆的续航。
+					</p>
+				</div>
+			</div>
+
+			<div
+				id="back-2"
+				class="step slide text back"
+				data-x="0"
+				data-y="-1500"
+			>
+				<div>
+					<h3><b>为什么</b>是<b>小程序</b></h3>
+					<ul>
+						<li><b>用户量大</b>，人人都有</li>
+						<li>开发简单，可<b>跨平台</b></li>
+						<li><b>使用简单</b>，扫码即开</li>
+						<li>随取随用，<b>不占内存</b></li>
+					</ul>
+				</div>
+			</div>
+
+			<div
+				id="title"
+				class="step"
+				data-x="-1700"
+				data-y="400"
+				data-scale="4"
+			>
+				<img src="./img/logo.png" alt="" srcset="" />
+				<h3>
+					智联互充小程序<br /><span>Smart charging Mini Program</span>
+				</h3>
+				<div class="dis">
+					<p>一个简单易用、界面美观、易于扩展的小程序</p>
+					<p>一个连接云端、面向用户的智能充电入口</p>
+				</div>
+			</div>
+
+			<div
+				id="related-technology-introduction"
+				class="step"
+				data-x="650"
+				data-y="2000"
+				data-rotate="90"
+				data-scale="5"
+			>
+				<div class="title">
+					相关技术介绍
+				</div>
+				<div>
+					<ul>
+						<li>Gulp.js (工作流)</li>
+						<li>Sass (CSS 增强)</li>
+						<li>Vant Weapp (组件库)</li>
+						<li>wxMiniStore (状态管理)</li>
+					</ul>
+				</div>
+			</div>
+
+			<div
+				id="gulp"
+				data-x="1550"
+				data-y="3000"
+				data-z="1000"
+				data-rotate="90"
+				data-rotate-x="30"
+				data-rotate-y="-10"
+				data-scale="1.3"
+				class="step yl"
+			>
+				「工作流」是业务过程的自动化，前端工作流，就是把前端业务中的一些工作用计算机工具自动完成。Gulp
+				则是一种前端工作流的工具，它可以解决前端中很多其实并不需要人力参与的工作，例如：
+				<ul>
+					<li>压缩静态资源</li>
+					<li>变更静态资源</li>
+					<li>给静态资源添加 md5</li>
+					<li>修改预处理样式后自动编译（SASS，Less）</li>
+					<li>合并雪碧图</li>
+					<li>自动刷新浏览器</li>
+				</ul>
+			</div>
+			<div
+				id="Sass"
+				data-x="930"
+				data-y="3000"
+				data-rotate="90"
+				data-rotate-x="30"
+				data-rotate-y="-10"
+				data-scale="1.3"
+				class="step yl"
+			>
+				Sass 是成熟、稳定、强大的专业级CSS扩展语言，它在 CSS
+				语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合
+				(mixins)、导入 (inline imports) 等高级功能，这些拓展令 CSS
+				更加强大与优雅。使用 Sass 以及 Sass
+				的样式库有助于更好地组织管理样式文件，以及更高效地开发项目。
+			</div>
+			<div
+				id="Vant"
+				data-x="300"
+				data-y="3000"
+				data-rotate="90"
+				data-rotate-x="30"
+				data-rotate-y="-10"
+				data-scale="1.3"
+				class="step yl"
+			>
+				Vant Weapp 是移动端 Vue 组件库 Vant
+				的小程序版本，两者基于相同的视觉规范，提供一致的 API
+				接口，助力开发者快速搭建小程序应用。<br />
+				此项目基于 MIT
+				协议，可以自由地享受和参与开源，扫描下方小程序二维码，体验组件库示例：
+				<img
+					src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg"
+					style="
+						width: 200px;
+						height: 200px;
+						margin-top: 15px;
+						box-shadow: none;
+						display: block;
+					"
+				/>
+			</div>
+			<div
+				id="wxMiniStore"
+				data-x="-380"
+				data-y="3000"
+				data-rotate="90"
+				data-rotate-x="30"
+				data-rotate-y="-10"
+				data-scale="1.3"
+				class="step yl"
+			>
+				wxMiniStore是一个基于原生小程序的mini全局状态管理库，支持跨页面/组件渲染。补足了原生小程序在组件化开发时变量混乱的问题。可以随时引入，不影响原有的业务，拓展性强。全局状态state支持所有Page和Component，状态完全同步渲染，并支持更新，更新时使用独有diff能力，性能更强。周期监听pageLisener能监听所有页面的onLoad、onShow等周期事件，方便埋点、统计等行为。全局事件methods，一处声明，所有wxml直接可用的函数。wxMiniStore非常适合原生小程序，即使后期引入，也只需增加几行代码。
+			</div>
+
+			<div
+				id="big"
+				class="step"
+				data-x="3500"
+				data-y="2100"
+				data-scale="4"
+			>
+				<p>
+					<b>功能强大</b>
+				</p>
+			</div>
+
+			<div
+				id="overall-system-architecture"
+				class="step"
+				data-x="8200"
+				data-y="3000"
+				data-scale="3"
+			>
+				<div class="title">系统功能结构</div>
+				<div>
+					<table
+						Table
+						cellspacing="0"
+						style="border-collapse: collapse; font-size: 25px;"
+					>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>登陆</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span>微信登陆/手机验证码登陆</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>退出登陆</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>清理登陆授权信息</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>搜索列表</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span>根据搜索条件显示站点信息</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>站点详情</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span
+										>点击站点显示详细信息和充电桩列表</span
+									>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>充电桩详情</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>展示充电桩详细信息</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>车牌增改</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>增加修改车牌信息</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>充电微信支付</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>预充电微信支付</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>预充电返还微信</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span>未用完余额返还到微信</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>充电钱包支付</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>预充电钱包支付</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>预充电返还钱包</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span>未用完余额返还到钱包</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>开始充电</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span>开始充电发指令到终端</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>结束充电</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>点击结束充电</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>个人信息修改</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>个人信息修改</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>我的钱包充值</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>我的钱包微信充值</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>我的钱包提现</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>我的钱包提现到微信</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>我的订单</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span
+										>正在充电的订单和一周内历史订单？</span
+									>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>我的收藏</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>收藏的站点和充电桩</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>我的电桩</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>2</span><span>.1</span
+									><span>版本，</span><span>私桩等</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>我的爱车</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>车辆信息增加修改</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>我的客服</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>展示客服相关信息</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>关于智充</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>展示智充信息</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>我的工作</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span>动态显示此项，维护和价格审核</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td width="300px">
+								<p>
+									<span>余额明细</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span> </span
+									><span>展示近七天余额变动明细</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<span>故障报修</span>
+								</p>
+							</td>
+							<td>
+								<p>
+									<span>提交故障信息</span>
+								</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div
+				id="tiny"
+				class="step"
+				data-x="2825"
+				data-y="2325"
+				data-z="-3000"
+				data-rotate="100"
+				data-scale="1"
+			>
+				<p><b>不止</b>功能强大</p>
+				<p>而且非常<b>精致</b></p>
+			</div>
+
+			<div
+				id="ing"
+				class="step"
+				data-x="2500"
+				data-y="-850"
+				data-z="0"
+				data-rotate="45"
+				data-scale="6"
+			>
+				<p>
+					使用<b class="positioning">分包加载</b>, 使用时<b
+						class="rotating"
+						>快速</b
+					>启动<br />
+					主包<b class="scaling">低至</b>0.6秒即可加载完毕
+				</p>
+			</div>
+
+			<div
+				id="imagination"
+				class="step"
+				data-x="5700"
+				data-y="-300"
+				data-rotate="45"
+				data-scale="6"
+			>
+				<p>
+					<b>所有</b>通信使用Token认证<br />
+					后台记录常用登录设备<b>保护</b>用户<br />
+					<b class="imagination">资金安全</b>
+				</p>
+			</div>
+
+			<div
+				id="token"
+				class="step"
+				data-x="4000"
+				data-y="0"
+				data-scale="0.5"
+			>
+				<div class="title">
+					拦截<br />
+					可疑用户
+				</div>
+				<div>
+					<img src="./img/token.png" />
+					<img src="./img/ee8822d54d892b5292165f70209829d.jpg" />
+				</div>
+			</div>
+
+			<div
+				id="storage"
+				class="step"
+				data-x="8300"
+				data-y="-1200"
+				data-scale="2"
+				data-rotate="45"
+			>
+				<h3>全局storage系统</h3>
+				微信小程序独特的渲染线程设计使它的渲染层和逻辑层不会互相阻塞，自定义组件的开发方式也使开发变得“高内聚，低耦合”，
+				但是这也使<b>跨组件和跨页面</b>的渲染层<b>数据交换</b>变得十分困难。为此我引入了<b>开源</b>的wxMiniStore库，
+				他的原理是<b>重写</b>页面和组件的<b>构造函数</b>，并维护了一个所有页面和组件的<b>引用列表</b>，并在需要时更新对应的渲染层。
+				在每个页面对象都挂载全局对象无疑会增加大量的渲染时间开销，所以可以使用<code>openPart</code>参数开启局部加载模式，
+				在页面对象设置<code>useStore:true</code>即可挂载全局Store。
+			</div>
+
+			<div
+				id="show"
+				class="step show"
+				data-x="-3300"
+				data-y="2200"
+				data-scale="1"
+			>
+				<h3>界面展示</h3>
+				<div>
+					<img src="./img/1.png" />
+					<img src="./img/2.png" />
+					<img src="./img/3.png" />
+					<img src="./img/4.png" />
+				</div>
+			</div>
+
+			<div
+				id="show2"
+				class="step show"
+				data-x="-3300"
+				data-y="3300"
+				data-scale="1"
+			>
+				<h3>界面展示</h3>
+				<div>
+					<img src="./img/5.png" />
+					<img src="./img/6.png" />
+					<img src="./img/7.png" />
+					<img src="./img/8.png" />
+				</div>
+			</div>
+
+			<div
+				id="show3"
+				class="step show"
+				data-x="-3300"
+				data-y="4400"
+				data-scale="1"
+			>
+				<h3>界面展示</h3>
+				<div>
+					<img src="./img/9.png" />
+					<img src="./img/10.png" />
+					<img src="./img/11.png" />
+					<img src="./img/12.png" />
+				</div>
+			</div>
+
+			<div
+				id="sum"
+				class="step"
+				data-x="3000"
+				data-y="5000"
+				data-scale="2"
+			>
+				<h3>总结</h3>
+				<p>
+					本次设计并实现了基于微信的电动汽车充电<b>运营平台</b>,为电动汽车充电提供了一种<b>解决方案</b>。使用微信小程序开发用户界面,简单快捷,扩展性好,用户只需微信扫一扫即可实现充电,使用方便。
+				</p>
+			</div>
+			<div
+				id="overview"
+				class="step"
+				data-x="3000"
+				data-y="1500"
+				data-z="0"
+				data-scale="10"
+			></div>
+		</div>
+
+		<div id="impress-toolbar"></div>
+		<script src="node_modules/impress.js/js/impress.js"></script>
+		<script>
+			let api = impress();
+			api.init();
+			window.addEventListener(
+				"keyup",
+				function (event) {
+					if (event.keyCode == 27) {
+						let steps = document.querySelectorAll(".step");
+						let end = steps[steps.length - 1];
+						api.goto(end);
+					} else if (event.keyCode == 37 || event.keyCode == 39) {
+						event.stopPropagation();
+					} else if (event.keyCode == 65) {
+						api.prev();
+					} else if (event.keyCode == 68) {
+						api.next();
+					}
+				},
+				true
+			);
+		</script>
+	</body>
+</html>
