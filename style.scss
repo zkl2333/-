@@ -87,7 +87,7 @@ a:focus {
 
 .impress-enabled .step {
 	margin: 0;
-	opacity: 0.1;
+	opacity: 0.03;
 	transition: opacity 0.5s;
 }
 
@@ -355,9 +355,10 @@ a:focus {
 }
 
 #end {
+	text-align: center;
+
 	h3 {
 		font-size: 200px;
-		text-align: center;
 	}
 }
 
